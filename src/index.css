@@ -1,0 +1,28 @@
+#root {
+  margin: 0 auto;
+}
+
+.container {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.child-container {
+  margin: 50px;
+  padding: 25px;
+}
+
+.shift {
+  margin: 50px;
+}
+
+.left {
+  width: 50%;
+  display: inline-block;
+}
+
+.right {
+  width: 50%;
+  display: inline-block;
+}
