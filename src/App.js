@@ -9,7 +9,9 @@ class Main extends Component {
     super();
     this.state = {
       indexTable: {},
-      letters: 'abcdefghijklmnopqrstuvwxyz'
+      letters: 'abcdefghijklmnopqrstuvwxyz',
+      cipherText: "",
+      plainText: "hello"
     };
   }
 
@@ -48,6 +50,7 @@ class Main extends Component {
     console.log("Working")
     let { plainText } = this.state;
     let cipherText = this.encrypt(plainText, shift);
+    console.log({ cipherText })
     this.setState({ cipherText, shift })
   };
 
@@ -61,10 +64,10 @@ class Main extends Component {
       return (
         <div className="container">
             <center><h1>Caesar's Cipher</h1></center>
-            <Shift></Shift>
+            <Shift onChange={this.handleShiftChange}></Shift>
             <Paper elevation={10} className="child-container">
-                  <Plaintext></Plaintext>
-                  <Ciphertext></Ciphertext>
+                  <Plaintext onChange={this.handlePlainTextInput}></Plaintext>
+                  <Ciphertext cipherText={this.state.cipherText}></Ciphertext>
             </Paper>
         </div>
       );

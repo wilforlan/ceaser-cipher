@@ -5,6 +5,10 @@ import TextField from '@material-ui/core/TextField';
 
 class Ciphertext extends Component {
 
+    constructor(props) {
+      super(props);
+    }
+
     render() {
         return (
       <div className="right">
@@ -15,6 +19,7 @@ class Ciphertext extends Component {
             rowsMax="10"
             margin="normal"
             placeholder="Enter ciphertext"
+            value={this.props.cipherText}
           />
         </center>
       </div>);

@@ -6,12 +6,17 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 class Shift extends Component {
   
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="shift">
         <center>
           <Select
             autoWidth={true}
+            onChange={this.props.onChange}
             displayEmpty>
             <MenuItem value="" disabled>Enter shift amount</MenuItem>
             <MenuItem value="1">1</MenuItem>

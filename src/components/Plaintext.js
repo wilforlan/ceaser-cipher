@@ -4,6 +4,11 @@ import TextField from '@material-ui/core/TextField';
 
 class Plaintext extends Component {
 
+    constructor(props) {
+      super(props);
+    }
+
+
     render() {
         return (
       <div className="left">
@@ -14,6 +19,7 @@ class Plaintext extends Component {
             rowsMax="10"
             margin="normal"
             placeholder="Enter plaintext"
+            onChange={this.onChange}
           />
         </center>
       </div>);
