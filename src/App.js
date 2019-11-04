@@ -11,14 +11,14 @@ class Main extends Component {
       indexTable: {},
       letters: 'abcdefghijklmnopqrstuvwxyz',
       cipherText: "",
-      plainText: "hello"
+      plainText: ""
     };
   }
 
   
   createWordIndex = () => {
       const { letters } = this.state;
-      let table = {}
+      let table = {};
       for (let index = 0; index < letters.length; index++) {
           const element = letters[index];
           table[element] = index + 1;
@@ -40,24 +40,24 @@ class Main extends Component {
     const { indexTable } = this.state;
     let result = word.split('').map( letter => {
         let currIndex = indexTable[letter];
-        if(currIndex) return this.findLetterInIndex(currIndex + shift)
+        if(currIndex) return this.findLetterInIndex(currIndex + Number(shift))
         else return letter
     });
     return result.join('');
   };
 
-  handleShiftChange = (shift) => {
-    console.log("Working")
+  handleShiftChange = (event) => {
+    let shift = event.target.value;
     let { plainText } = this.state;
     let cipherText = this.encrypt(plainText, shift);
-    console.log({ cipherText })
-    this.setState({ cipherText, shift })
+    this.setState({ cipherText, plainText, shift })
   };
 
-  handlePlainTextInput = (text) => {
+  handlePlainTextInput = (event) => {
+    let text = event.target.value;
     let { shift } = this.state;
     let cipherText = this.encrypt(text, shift);
-    this.setState({ cipherText, shift })
+    this.setState({ cipherText, plainText: text, shift })
   };
 
     render() {

@@ -8,7 +8,13 @@ class Shift extends Component {
   
   constructor(props) {
     super(props);
+    this.state = {};
   }
+
+  handleClickChange = (event) => {
+    this.props.onChange(event);
+    this.setState({ selectValue:  event.target.value });
+  };
 
   render() {
     return (
@@ -16,8 +22,9 @@ class Shift extends Component {
         <center>
           <Select
             autoWidth={true}
-            onChange={this.props.onChange}
-            displayEmpty>
+            onChange={this.handleClickChange}
+            displayEmpty
+            value={this.state.selectValue || ''}>
             <MenuItem value="" disabled>Enter shift amount</MenuItem>
             <MenuItem value="1">1</MenuItem>
             <MenuItem value="2">2</MenuItem>

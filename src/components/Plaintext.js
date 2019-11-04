@@ -19,7 +19,7 @@ class Plaintext extends Component {
             rowsMax="10"
             margin="normal"
             placeholder="Enter plaintext"
-            onChange={this.onChange}
+            onChange={this.props.onChange}
           />
         </center>
       </div>);
