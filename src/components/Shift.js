@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 
 class Shift extends Component {
-
+  
   render() {
     return (
       <div className="shift">
@@ -14,6 +14,10 @@ class Shift extends Component {
             autoWidth={true}
             displayEmpty>
             <MenuItem value="" disabled>Enter shift amount</MenuItem>
+            <MenuItem value="1">1</MenuItem>
+            <MenuItem value="2">2</MenuItem>
+            <MenuItem value="3">3</MenuItem>
+            <MenuItem value="4">4</MenuItem>
           </Select>
         </center>
       </div>
